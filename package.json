@@ -1,0 +1,32 @@
+{
+  "name": "learn-grunt-typescript",
+  "version": "1.0.0",
+  "description": "learning, grunt, typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anditakaesar/learn-grunt-typescript.git"
+  },
+  "keywords": [
+    "learning",
+    "grunt",
+    "typescript"
+  ],
+  "author": "anditakaesar@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anditakaesar/learn-grunt-typescript/issues"
+  },
+  "homepage": "https://github.com/anditakaesar/learn-grunt-typescript#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-open": "^0.2.3",
+    "grunt-typescript": "^0.8.0",
+    "typescript": "^2.6.2"
+  }
+}
