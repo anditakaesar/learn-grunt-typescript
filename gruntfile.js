@@ -1,7 +1,6 @@
 module.exports = function (grunt) {
-  "use strict";
   //load npm tasks
-  grunt.loadNpmTasks('grunt-typescript');
+  grunt.loadNpmTasks('grunt-ts');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks("grunt-contrib-copy");
@@ -35,17 +34,20 @@ module.exports = function (grunt) {
             port: 8080,
             base: './dist',
             livereload: true,
-            open: true
+            open: false
           }
         }
       },
-      typescript: {
+      ts: {
           base: {
-              src: ['src/**/*.ts'],
-              dest: 'dist/js/generated.js',
+              src: ['src/**/*.ts', '!node_modules/**'],
+              dest: 'dist/js/',
               options: {
                   module: 'amd',
-                  target: 'es5'
+                  target: 'es6',
+                  rootDir: './src',
+                  outDir: './dist',
+                  sourceMap: false
               }
           }
       },
@@ -55,7 +57,7 @@ module.exports = function (grunt) {
         },
         ts: {
           files: '**/*.ts',
-          tasks: ['typescript']
+          tasks: ['ts']
         },
         html: {
           files: '**/*.html',
@@ -69,6 +71,6 @@ module.exports = function (grunt) {
       }
   });
 
-  grunt.registerTask('default', ['copy', 'typescript', 'connect', 'open', 'watch']);
+  grunt.registerTask('default', ['copy', 'ts', 'connect', 'open:dev', 'watch']);
 
 }

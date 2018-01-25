@@ -62,3 +62,4 @@ dist/
 
 # tscache, typescript cache of grunt-ts
 .tscache/
+*.tmp.txt
